@@ -7,6 +7,8 @@ import { LoaderPage } from './loader-page';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { CustomBreadCrumb } from '@/components/custom-bread-crumb';
 import { Lightbulb } from 'lucide-react';
+import { QuestionSection } from '@/components/question-section';
+
 
 export const MockInterviewPage = () => {
 
@@ -92,6 +94,13 @@ if (isLoading) {
         </div>
       </Alert>
     </div>
+
+      {interview?.questions && interview?.questions.length >0 &&(
+        <div className='mt-4 w-full flex flex-col items-start gap-4'>
+          <QuestionSection questions={interview?.questions}/>
+        </div>
+      )}
+
   </div>
 )
 }
