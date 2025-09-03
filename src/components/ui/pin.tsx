@@ -1,24 +1,24 @@
 
-import { useAuth } from "@clerk/clerk-react"
-import { useState } from "react"
-import type { boolean } from "zod"
+// import { useAuth } from "@clerk/clerk-react"
+// import { useState } from "react"
+// import type { boolean } from "zod"
 import { useNavigate } from "react-router-dom";
 
 import {
     Card,
 
-    CardContent,
+    // CardContent,
     CardDescription,
     CardFooter,
-    CardHeader,
+    // CardHeader,
     CardTitle,
 } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { Badge } from "./badge"
 import type { Interview } from "@/scripts"
 import { TooltipButton } from "./tooltip-button"
-import { data } from "react-router"
-import { Eye, Newspaper, Pencil, Sparkles } from "lucide-react"
+// import { data } from "react-router"
+import { Eye, Newspaper, Sparkles } from "lucide-react"
 
 interface InterviewPinProps {
     interview: Interview,
@@ -29,8 +29,8 @@ export const InterviewPin = ({
     interview, onMockPage = false
 }: InterviewPinProps) => {
 
-    const [loading, setLoading] = useState(false);
-    const { userId } = useAuth();
+    // const [loading, setLoading] = useState(false);
+    // const { userId } = useAuth();
     const navigate = useNavigate();
 
     return (

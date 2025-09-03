@@ -91,7 +91,7 @@ const [loading, setLoading] = useState(false);
 ) : (
   <div className="md:col-span-3 w-full flex flex-grow items-center justify-center h-96 flex-col">
     <img
-      src="/svg/not-found.svg"
+      src="src/assets/svg/not-found.svg"
       className="w-44 h-44 object-contain"
       alt=""
     />

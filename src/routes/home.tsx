@@ -1,116 +1,250 @@
 import { Container } from "@/components/container";
 import { Button } from "@/components/ui/button";
 import { MarqueImg } from "@/components/ui/marquee-img";
-import { Sparkles } from "lucide-react";
-import Marquee from "react-fast-marquee"
+import { Sparkles, ArrowRight, Star, Users, Target, BarChart3, Brain, Mic2, Calendar } from "lucide-react";
+import Marquee from "react-fast-marquee";
 import { Link } from "react-router";
-
 
 const HomePage = () => {
   return (
-    <div className="flex-col w-full pb-24">
-      <Container>
-        <div className="my-8">
-          <h2 className="text-3xl text-center md:text-left md:text-6xl">
-            <span className="text-outline font-extrabold md:text-8xl">
-              AI Superpower
-            </span>
-            <span className="text-gray-500 font-extrabold">
-              – A better way to
-            </span>
-            <br />
-            improve your interview chances and skills
-          </h2>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/50 via-white">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-20 pb-16">
+        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-blue-600/10 to-purple-600/10 transform -skew-y-3 -translate-y-32"></div>
+        
+        <Container className="relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 text-sm font-medium text-blue-700 mb-6">
+                <Sparkles className="w-4 h-4 mr-2" /> AI-Powered Interview Excellence
+              </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                  Master Interviews
+                </span>
+                <span className="block text-slate-800 mt-2">With AI Precision</span>
+              </h1>
 
-          <p className="mt-4 text-muted-foreground text-sm">
-            Enhance your interview preparation with AI-driven insights. Get
-            tailored guidance, practice smarter, and boost your chances of
-            standing out in every interview.
-          </p>
-        </div>
+              <p className="text-lg text-slate-600 max-w-2xl mb-8">
+                Preplora transforms your interview preparation with personalized AI coaching, 
+                realistic practice environments, and actionable feedback to help you land your dream job.
+              </p>
 
-        {/* image section */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+                <Link to={"/generate"}>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-md font-semibold rounded-full shadow-lg shadow-blue-500/30">
+                    Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                
+              </div>
 
-        <div className="w-full mt-4 rounded-xl bg-gray-100 h-[420px] drop-shadow-md relative overflow-hidden">
-          {/* Background Image */}
-          <img
-            src="src/assets/img/hero.jpg"
-            alt="AI Interview"
-            className="w-full h-full object-cover rounded-xl"
-          />
+              <div className="flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                <div className="flex items-center">
+                  <div className="flex -space-x-2 mr-2">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white"></div>
+                    ))}
+                  </div>
+                  <span>2k+ Active Users</span>
+                </div>
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="ml-1">4.9/5</span>
+                </div>
+              </div>
+            </div>
 
-          {/* Top-left Label */}
-          <div className="absolute top-4 left-4 px-4 py-2 rounded-md bg-white/80 text-sm font-medium shadow-sm">
-            Inteviews Copilot&copy;
+            <div className="flex-1 relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
+                <img
+                  src="src/assets/img/hero.jpg"
+                  alt="AI Interview"
+                  className="w-full h-[480px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                
+                
+                
+                
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-200/30 rounded-full"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-200/30 rounded-full"></div>
+            </div>
           </div>
+        </Container>
+      </section>
 
-          {/* Bottom-right Content */}
-          <div className="hidden md:block absolute w-80 bottom-4 right-4 px-4 py-4 rounded-lg bg-white/90 shadow-md">
-            <h2 className="text-neutral-800 font-semibold">Developer</h2>
-            <p className="text-sm text-neutral-500 mt-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-              distinctio natus, quos voluptatibus magni sapiente.
+      {/* Trusted By Section */}
+      <section className="py-12 bg-slate-50">
+        <Container>
+          <div className="text-center text-sm font-medium text-slate-500 uppercase tracking-wider mb-8">
+            Trusted by professionals at leading companies
+          </div>
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
+            
+            <Marquee pauseOnHover gradient={false} speed={50}>
+              {[
+                "src/assets/img/logo/firebase.png",
+                "src/assets/img/logo/meet.png",
+                "src/assets/img/logo/zoom.png",
+                "src/assets/img/logo/microsoft.png",
+                "src/assets/img/logo/tailwindcss.png",
+                "src/assets/img/logo/firebase.png",
+                "src/assets/img/logo/meet.png",
+                "src/assets/img/logo/zoom.png",
+                "src/assets/img/logo/microsoft.png",
+                "src/assets/img/logo/tailwindcss.png"
+              ].map((img, index) => (
+                <div key={index} className="mx-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                  <MarqueImg img={img} />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+        </Container>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 md:py-24">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              Why Preplora Stands Out
+            </h2>
+            <p className="text-lg text-slate-600">
+              Our AI-powered platform provides everything you need to transform your interview skills and boost your confidence.
             </p>
-            <Button className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-sm font-medium rounded-md hover:bg-neutral-800 transition">
-              Generate <span className="text-lg">✨</span>
-            </Button>
           </div>
-        </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Brain className="h-8 w-8 text-blue-600" />,
+                title: "Smart Question Bank",
+                description: "Access thousands of industry-specific questions tailored to your experience level and job role."
+              },
+              {
+                icon: <Mic2 className="h-8 w-8 text-purple-600" />,
+                title: "Real-time Practice",
+                description: "Practice with our AI interviewer that adapts to your responses and provides instant feedback."
+              },
+              {
+                icon: <BarChart3 className="h-8 w-8 text-green-600" />,
+                title: "Performance Analytics",
+                description: "Track your progress with detailed metrics on your speaking pace, clarity, and content quality."
+              },
+              {
+                icon: <Target className="h-8 w-8 text-orange-600" />,
+                title: "Personalized Roadmap",
+                description: "Get a customized preparation plan based on your strengths, weaknesses, and timeline."
+              },
+              {
+                icon: <Users className="h-8 w-8 text-pink-600" />,
+                title: "Peer Comparison",
+                description: "See how you stack up against other candidates preparing for similar roles."
+              },
+              {
+                icon: <Calendar className="h-8 w-8 text-indigo-600" />,
+                title: "Flexible Scheduling",
+                description: "Practice anytime with 24/7 access to our AI interviewers that never get tired."
+              }
+            ].map((feature, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-slate-100">
+                <div className="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
+      {/* How It Works Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50/30">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+              How Preplora Works
+            </h2>
+            <p className="text-lg text-slate-600">
+              Getting interview-ready has never been easier with our simple 3-step process
+            </p>
+          </div>
+          
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <img
+                src="src/assets/img/office.jpg"
+                alt="How Preplora works"
+                className="w-full rounded-3xl shadow-xl"
+              />
+            </div>
+            
+            <div className="flex-1">
+              <div className="space-y-8">
+                {[
+                  { number: "01", title: "Set Your Preferences", description: "Tell us about your target role, industry, and experience level to customize your practice sessions." },
+                  { number: "02", title: "Practice with AI", description: "Engage in realistic interview simulations with our AI that adapts to your responses in real-time." },
+                  { number: "03", title: "Review & Improve", description: "Get detailed feedback on your performance with actionable insights to strengthen your weak areas." }
+                ].map((step, index) => (
+                  <div key={index} className="flex gap-6">
+                    <div className="flex-shrink-0 w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      {step.number}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-slate-900 mb-2">{step.title}</h3>
+                      <p className="text-slate-600">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <Link to={"/generate"} className="mt-10 inline-block">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-md font-semibold rounded-full shadow-lg shadow-blue-500/30">
+                  Start Your Journey <Sparkles className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
 
-      </Container>
+      
 
-      {/* marquee section */}
-<div className="w-full my-12">
-  <Marquee pauseOnHover>
-    <MarqueImg img="src/assets/img/logo/firebase.png" />
-        <MarqueImg img="src/assets/img/logo/meet.png" />
-        <MarqueImg img="src/assets/img/logo/zoom.png" />
-        <MarqueImg img="src/assets/img/logo/microsoft.png" />
-        <MarqueImg img="src/assets/img/logo/tailwindcss.png" />
-        <MarqueImg img="src/assets/img/logo/firebase.png" />
-        <MarqueImg img="src/assets/img/logo/meet.png" />
-        <MarqueImg img="src/assets/img/logo/zoom.png" />
-        <MarqueImg img="src/assets/img/logo/microsoft.png" />
-        <MarqueImg img="src/assets/img/logo/tailwindcss.png" />
-  </Marquee>
-</div>
-
-
-<Container className="py-8 space-y-8">
-  <h2 className="tracking-wide text-xl text-gray-800 font-semibold">
-    Unleash your potential with personalized AI insights and targeted
-    interview practice.
-  </h2>
-
-  <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
-    {/* Left Side - Image */}
-    <div className="col-span-1 md:col-span-3">
-      <img
-        src="src/assets/img/office.jpg"
-        alt="Office workspace"
-        className="w-full max-h-96 rounded-md object-cover"
-      />
-    </div>
-
-    {/* Right Side - Text & Button */}
-    <div className="col-span-1 md:col-span-2 gap-8 max-h-96 min-h-96 w-full flex flex-col justify-center">
-      <p className="text-center text-muted-foreground">
-        Transform the way you prepare, gain confidence, and boost your chances
-        of landing your dream job. Let AI be your edge in today&apos;s
-        competitive job market.
-      </p>
-
-      <Link to={"/generate"} className="w-full flex justify-center">
-        <Button className="w-3/4">
-          Generate <Sparkles className="ml-2" />
-        </Button>
-      </Link>
-    </div>
-  </div>
-</Container>
-
-
+      {/* Final CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl mx-4 mb-16">
+        <Container>
+          <div className="text-center max-w-3xl mx-auto text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to transform your interview skills?
+            </h2>
+            <p className="text-lg text-blue-100 mb-10">
+              Join thousands of professionals who have boosted their confidence and landed their dream jobs with Preplora.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to={"/generate"}>
+                <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-6 text-md font-semibold rounded-full">
+                  Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              
+            </div>
+            
+            <p className="text-blue-200 text-sm mt-6">No credit card required • 7-day free trial</p>
+          </div>
+        </Container>
+      </section>
     </div>
   );
 };

@@ -9,10 +9,10 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Home</a></li>
-            <li><a href="#" className="hover:text-white">Contact Us</a></li>
-            <li><a href="#" className="hover:text-white">About Us</a></li>
-            <li><a href="#" className="hover:text-white">Services</a></li>
+            <li><a href="/" className="hover:text-white">Home</a></li>
+            <li><a href="/contact" className="hover:text-white">Contact Us</a></li>
+            <li><a href="/about" className="hover:text-white">About Us</a></li>
+
           </ul>
         </div>
 
@@ -26,15 +26,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Services */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Services</h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="hover:text-white">Interview Preparation</a></li>
-            <li><a href="#" className="hover:text-white">Career Coaching</a></li>
-            <li><a href="#" className="hover:text-white">Resume Building</a></li>
-          </ul>
-        </div>
+        
 
         {/* Contact Us */}
         <div>

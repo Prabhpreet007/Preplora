@@ -1,7 +1,7 @@
 import { db } from '@/components/config/firebase.config';
 import type { Interview } from '@/types';
 import { doc, getDoc } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
 import { LoaderPage } from './loader-page';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"

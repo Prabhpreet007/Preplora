@@ -9,10 +9,10 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
-interface CustomBreadCrumbProps{
-    breadCrumbPage:string;
-    breadCrumpItems?:{link:string; label:string}[];
-}
+// interface CustomBreadCrumbProps{
+//     breadCrumbPage:string;
+//     breadCrumpItems?:{link:string; label:string}[];
+// }
 
 export const CustomBreadCrumb = ({
   breadCrumbItems,

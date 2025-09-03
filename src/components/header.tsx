@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { useAuth } from '@clerk/clerk-react'
-import React from 'react'
+
 import { Container } from './container';
 import { LogoContainer } from './logo-container';
 import { NavigationRoutes } from './navigation-routes';

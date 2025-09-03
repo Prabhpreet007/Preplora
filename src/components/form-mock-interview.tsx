@@ -6,9 +6,9 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FormProvider, useForm } from "react-hook-form"
 import { useEffect, useState } from "react"
-import { data, useNavigate } from "react-router"
+import {  useNavigate } from "react-router"
 import { toast } from "sonner"
-import { Heading, Loader, Trash2 } from "lucide-react"
+import {  Loader, Trash2 } from "lucide-react"
 import { Headings } from "./headings"
 import { Button } from "./ui/button"
 import { Separator } from "@radix-ui/react-separator"
@@ -49,10 +49,32 @@ type FormData = z.infer<typeof formSchema>
 
 export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
 
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: initialData || {}
-  })
+  // const form = useForm<FormData>({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: initialData || {
+  //     position: "",
+  //   description: "",
+  //   experience: 0,
+  //   techStack: "",
+  //   }
+  // })
+
+
+  type Schema = typeof formSchema;
+type SchemaInput = z.input<Schema>;   // before parsing (experience: unknown)
+type SchemaOutput = z.output<Schema>; // after parsing (experience: number)
+
+const form = useForm<SchemaInput, undefined, SchemaOutput>({
+  resolver: zodResolver(formSchema),
+  defaultValues: initialData || {
+    position: "",
+    description: "",
+    experience: 0,
+    techStack: "",
+  },
+})
+
+
 
   const { isValid, isSubmitting } = form.formState
   const [loading, setLoading] = useState(false);
@@ -278,7 +300,7 @@ The questions should assess skills in ${data?.techStack} development and best pr
                     disabled={loading}
                     className="h-12"
                     placeholder="eg:- 5"
-                    value={field.value || ""}
+                    value={field.value as number | string || ""}
 
                   />
                 </FormControl>

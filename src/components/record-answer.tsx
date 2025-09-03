@@ -1,5 +1,5 @@
 import { useAuth } from '@clerk/clerk-react';
-import { CircleStop, Loader, Mic, RefreshCcw, RefreshCw, Save, Video, VideoOff, Webcam, WebcamIcon } from 'lucide-react';
+import { CircleStop, Loader, Mic, RefreshCw, Save, Video, VideoOff, WebcamIcon } from 'lucide-react';
 import useSpeechToText, { type ResultType } from 'react-hook-speech-to-text';
 import { useParams } from 'react-router';
 import { TooltipButton } from './ui/tooltip-button';
@@ -7,8 +7,9 @@ import { toast } from 'sonner';
 import { useEffect, useState } from 'react';
 import { chatSession } from '@/scripts';
 import { SaveModal } from './save-modal';
-import { addDoc, collection, getDoc, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, serverTimestamp, where } from 'firebase/firestore';
 import { db } from './config/firebase.config';
+import Webcam from 'react-webcam';
 
 
 interface RecordAnswerProps {
@@ -29,7 +30,7 @@ export const RecordAnswer = ({
 }: RecordAnswerProps) => {
 
     const {
-        error,
+        // error,
         interimResult,
         isRecording,
         results,
@@ -148,7 +149,7 @@ export const RecordAnswer = ({
                 return;
             } else {
                 // save the user answer
-                const questionAnswerRef = await addDoc(collection(db, "userAnswers"), {
+                 await addDoc(collection(db, "userAnswers"), {
                     mockIdRef: interviewId,
                     question: question.question,
                     correct_ans: question.answer,
