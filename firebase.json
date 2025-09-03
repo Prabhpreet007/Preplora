@@ -2,6 +2,8 @@
   "hosting": {
     "public": "dist",
     "ignore": [
+        "index.html",
+
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
