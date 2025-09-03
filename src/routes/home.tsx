@@ -4,8 +4,17 @@ import { MarqueImg } from "@/components/ui/marquee-img";
 import { Sparkles, ArrowRight, Star, Users, Target, BarChart3, Brain, Mic2, Calendar } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router";
+import heroImg from "@/assets/img/hero.jpg";
+import officeImg from "@/assets/img/office.jpg";
+import firebaseLogo from "@/assets/img/logo/firebase.png";
+import meetLogo from "@/assets/img/logo/meet.png";
+import zoomLogo from "@/assets/img/logo/zoom.png";
+import microsoftLogo from "@/assets/img/logo/microsoft.png";
+import tailwindLogo from "@/assets/img/logo/tailwindcss.png";
 
 const HomePage = () => {
+    // const logos = [firebaseLogo, meetLogo, zoomLogo, microsoftLogo, tailwindLogo];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/50 via-white">
       {/* Hero Section */}
@@ -61,7 +70,7 @@ const HomePage = () => {
             <div className="flex-1 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20">
                 <img
-                  src="src/assets/img/hero.jpg"
+                  src={heroImg}
                   alt="AI Interview"
                   className="w-full h-[480px] object-cover"
                 />
@@ -92,16 +101,16 @@ const HomePage = () => {
             
             <Marquee pauseOnHover gradient={false} speed={50}>
               {[
-                "src/assets/img/logo/firebase.png",
-                "src/assets/img/logo/meet.png",
-                "src/assets/img/logo/zoom.png",
-                "src/assets/img/logo/microsoft.png",
-                "src/assets/img/logo/tailwindcss.png",
-                "src/assets/img/logo/firebase.png",
-                "src/assets/img/logo/meet.png",
-                "src/assets/img/logo/zoom.png",
-                "src/assets/img/logo/microsoft.png",
-                "src/assets/img/logo/tailwindcss.png"
+                firebaseLogo,
+                meetLogo,
+                zoomLogo,
+                microsoftLogo,
+                tailwindLogo,
+                firebaseLogo,
+                meetLogo,
+                zoomLogo,
+                microsoftLogo,
+                tailwindLogo
               ].map((img, index) => (
                 <div key={index} className="mx-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                   <MarqueImg img={img} />
@@ -184,7 +193,7 @@ const HomePage = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="flex-1">
               <img
-                src="src/assets/img/office.jpg"
+                src={officeImg}
                 alt="How Preplora works"
                 className="w-full rounded-3xl shadow-xl"
               />
