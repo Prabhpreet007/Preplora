@@ -11,6 +11,7 @@ import { Plus } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
 import { toast } from "sonner"
+import notFoundImg from "@/assets/svg/not-found.svg"
 
 
 
@@ -91,7 +92,7 @@ const [loading, setLoading] = useState(false);
 ) : (
   <div className="md:col-span-3 w-full flex flex-grow items-center justify-center h-96 flex-col">
     <img
-      src="src/assets/svg/not-found.svg"
+      src={notFoundImg}
       className="w-44 h-44 object-contain"
       alt=""
     />
