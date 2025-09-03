@@ -14,9 +14,9 @@ const Header = () => {
 
   return <header className={cn("w-full border-b duration-150 transition-all ease-in-out")}>
     <Container>
-      <div className='flex items-center gap-4 w-full'>
+      <div className='flex items-center gap-8 w-full'>
         <LogoContainer/>
-        <nav className="hidden md:flex items-center gap-3">
+        <nav className="hidden md:flex items-center gap-6">
         <NavigationRoutes/>
         {userId && (
           <NavLink

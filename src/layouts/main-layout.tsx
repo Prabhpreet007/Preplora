@@ -8,7 +8,7 @@ export const MainLayout = () => {
   return (
     <div className='flex flex-col h-screen'>
     
-    <Header/>
+    <Header />
     
     <Container className='flex-grow'>
     <main className='flex-grow'>

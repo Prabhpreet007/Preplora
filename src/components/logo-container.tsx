@@ -19,7 +19,7 @@ export const LogoContainer = () => {
     <Link to={"/"}>
       <img
         src={logo} // ✅ imported asset ka use
-        className="min-w-10 min-h-10 object-contain"
+        className="w-32 h-auto object-contain"
         alt="Preplora Logo"
       />
     </Link>
