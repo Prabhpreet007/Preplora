@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: .
+    container_name: preplora_frontend
+    ports:
+      - "3000:80"   # localhost:3000 → nginx:80
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
